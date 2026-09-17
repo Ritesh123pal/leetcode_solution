@@ -1,0 +1,16 @@
+# leetcode 1 -Two sum 
+# Given an array of integers nums and an integer target,
+# return indices of the two numbers whose sum equals  target.
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        show={}
+        for i in range(len(nums)):
+            val=target-nums[i]
+            if(val in show):
+                    return[show[val],i]
+            show[nums[i]]=i
