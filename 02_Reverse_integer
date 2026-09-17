@@ -1,0 +1,26 @@
+# Given a signed 32-bit integer x, return x with its digits reversed.
+#  If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1],
+#   then return 0.
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        MAX=2**31-1
+        MIN=-2**31
+        num=x
+        if x<0:
+           sign=-1
+        else :
+            sign=1   
+        num=abs(num)       
+        sum=0
+        while(num!=0):
+            remainder=num%10 
+            sum=sum*10+remainder
+            num=num//10
+        sum=sum*sign
+        if (sum<MIN or sum>MAX):
+            return 0
+        return sum
