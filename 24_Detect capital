@@ -1,0 +1,17 @@
+# Given a string word, return true if the usage of capitals in it is right.
+class Solution(object):
+    def detectCapitalUse(self, word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        if len(word)==1:
+            return True
+        if word==word.capitalize():
+            return True
+        if word == word.upper():
+            return True  
+        if word == word.lower():
+            return True        
+        return False 
+ 
